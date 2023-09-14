@@ -12,24 +12,24 @@
         class="mx-1"
       />
       By <a
-        href="https://themeselection.com"
+        href="https://www.facebook.com/yasolovest/"
         target="_blank"
         rel="noopener noreferrer"
         class="text-primary ms-1"
-      >ThemeSelection</a>
+      >noadvcxxi@gmail.com</a>
     </span>
     <!-- 👉 Footer: right content -->
     <span class="d-md-flex gap-x-4 text-primary d-none">
       <a
-        href="https://themeselection.com/license/"
+        href="https://www.facebook.com/yasolovest/"
         target="noopener noreferrer"
       >License</a>
       <a
-        href="https://themeselection.com/"
+        href="https://www.facebook.com/yasolovest/"
         target="noopener noreferrer"
       >More Themes</a>
       <a
-        href="https://demos.themeselection.com/sneat-vuetify-vuejs-admin-template/documentation/"
+        href="https://www.facebook.com/yasolovest/"
         target="noopener noreferrer"
       >Documentation</a>
     </span>

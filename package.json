@@ -1,5 +1,5 @@
 {
-  "name": "sneat-vuetify-vuejs-admin-template",
+  "name": "vcdoan",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -31,7 +31,7 @@
     "vue": "^3.3.4",
     "vue-chartjs": "^5.2.0",
     "vue-flatpickr-component": "11.0.3",
-    "vue-i18n": "^9.2.2",
+    "vue-i18n": "^9.4.0",
     "vue-prism-component": "^2.0.0",
     "vue-router": "^4.2.1",
     "vue3-apexcharts": "^1.4.1",

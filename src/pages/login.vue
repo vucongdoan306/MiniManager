@@ -28,16 +28,16 @@ const isPasswordVisible = ref(false)
         </template>
 
         <VCardTitle class="text-2xl font-weight-bold">
-          sneat
+          {{ $t('AppName') }}
         </VCardTitle>
       </VCardItem>
 
       <VCardText class="pt-2">
         <h5 class="text-h5 mb-1">
-          Welcome to sneat! 👋🏻
+          Welcome to {{ $t('AppName') }}! 👋🏻
         </h5>
         <p class="mb-0">
-          Please sign-in to your account and start the adventure
+          Hãy đăng nhập tài khoản của bạn và sử dụng chương trình
         </p>
       </VCardText>
 
@@ -95,7 +95,7 @@ const isPasswordVisible = ref(false)
               cols="12"
               class="text-center text-base"
             >
-              <span>New on our platform?</span>
+              <span>{{ $t('donthaveaccount') }}</span>
               <RouterLink
                 class="text-primary ms-2"
                 to="/register"

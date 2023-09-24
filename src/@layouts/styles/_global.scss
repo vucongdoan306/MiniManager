@@ -5,6 +5,12 @@
   background-repeat: no-repeat;
 }
 
+@font-face {
+  font-family: Open-San;
+  src: url("../../assets/fonts/OpenSans-Regular.ttf");
+}
+
 html {
   box-sizing: border-box;
+  font-family: Open-San;
 }

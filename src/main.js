@@ -1,6 +1,7 @@
 /* eslint-disable import/order */
 import "@/@iconify/icons-bundle"
 import App from "@/App.vue"
+import i18n from "@/i18n/config"
 import vuetify from "@/plugins/vuetify"
 import { loadFonts } from '@/plugins/webfontloader'
 import router from "@/router"
@@ -11,8 +12,7 @@ import ElementPlus from "element-plus"
 import "element-plus/dist/index.css"
 import { createPinia } from "pinia"
 import { createApp } from "vue"
-
-import i18n from "@/i18n/config"
+import api from "./plugins/api"
 
 loadFonts()
 
@@ -36,5 +36,5 @@ config.globalProperties.$d = i18n.global.d
 config.globalProperties.$n = i18n.global.n
 
 // Mount vue app
-
+app.use(api);
 app.mount("#app")

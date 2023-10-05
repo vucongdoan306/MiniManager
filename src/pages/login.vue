@@ -1,9 +1,9 @@
 <script setup>
-import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
-import logo from '@images/logo.svg?raw'
+import AuthProvider from '@/views/pages/authentication/AuthProvider.vue';
+import logo from '@images/logo.svg?raw';
 
 const form = ref({
-  email: '',
+  username: '',
   password: '',
   remember: false,
 })
@@ -47,7 +47,7 @@ const isPasswordVisible = ref(false)
             <!-- email -->
             <VCol cols="12">
               <VTextField
-                v-model="form.email"
+                v-model="form.username"
                 autofocus
                 placeholder="johndoe@email.com"
                 label="Email"
@@ -85,6 +85,8 @@ const isPasswordVisible = ref(false)
               <VBtn
                 block
                 type="submit"
+                :loading="loading"
+                @click="load"
               >
                 Login
               </VBtn>

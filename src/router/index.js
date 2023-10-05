@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -58,5 +58,19 @@ const router = createRouter({
     },
   ],
 })
+
+
+router.beforeEach((to, from, next) => {
+  const token = localStorage.getItem('token'); // Lấy token từ localStorage hoặc nơi bạn lưu trữ token
+
+  // Kiểm tra nếu trang yêu cầu xác thực (requiresAuth) và không có token
+  if (to.matched.some(record => record.meta.requiresAuth) && !token) {
+    // Nếu không có token, chuyển hướng về trang đăng nhập hoặc trang không được ủy quyền
+    next('/login'); // Thay thế '/login' bằng đường dẫn tới trang đăng nhập của bạn
+  } else {
+    // Nếu có token hoặc trang không yêu cầu xác thực, cho phép chuyển hướng
+    next();
+  }
+});
 
 export default router

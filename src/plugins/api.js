@@ -1,4 +1,4 @@
-import { base } from '@/apis/ApiService';
+import { base } from '@/apis/ApiService.js';
 
 export default {
   install: (app) => {

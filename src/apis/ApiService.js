@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // Tạo một instance của axios với các default config
 const instance = axios.create({
-  baseURL: "https://localhost:7278/api",
+  baseURL: "https://localhost:7032/api",
   // baseURL: "http://35.234.5.238:8889/api",
   
   headers: {
@@ -14,7 +14,7 @@ const instance = axios.create({
 // Tạo một interceptor để thêm token vào header của request
 instance.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem('authToken')
     if (token) {
       config.headers.Authorization = `Bearer ${token}`
     }

@@ -1,6 +1,8 @@
 <script setup>
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue';
 import logo from '@images/logo.svg?raw';
+import { getCurrentInstance, ref } from "vue";
+const { proxy } = getCurrentInstance();
 
 const form = ref({
   username: '',
@@ -9,6 +11,14 @@ const form = ref({
 })
 
 const isPasswordVisible = ref(false)
+
+async function login(){
+  await proxy.$api.post("/Auth/LoginApp",{userName: form.value.username,password: form.value.password}).then(data=>{
+    localStorage.setItem("authToken",data)
+    proxy.$router.push("/")
+  });
+
+}
 </script>
 
 <template>
@@ -42,7 +52,7 @@ const isPasswordVisible = ref(false)
       </VCardText>
 
       <VCardText>
-        <VForm @submit.prevent="$router.push('/')">
+        <VForm @submit.prevent="login">
           <VRow>
             <!-- email -->
             <VCol cols="12">

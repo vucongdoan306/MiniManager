@@ -1,3 +1,4 @@
+import { base } from '@/apis/ApiService.js';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
@@ -7,6 +8,9 @@ const router = createRouter({
     {
       path: '/',
       component: () => import('../layouts/default.vue'),
+      meta:{
+        requiresAuth: true
+      },
       children: [
         {
           path: 'dashboard',
@@ -61,12 +65,20 @@ const router = createRouter({
 
 
 router.beforeEach((to, from, next) => {
-  const token = localStorage.getItem('token'); // Lấy token từ localStorage hoặc nơi bạn lưu trữ token
+  const token = localStorage.getItem('authToken'); // Lấy token từ localStorage hoặc nơi bạn lưu trữ token
 
   // Kiểm tra nếu trang yêu cầu xác thực (requiresAuth) và không có token
-  if (to.matched.some(record => record.meta.requiresAuth) && !token) {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    base.get("/Auth/Required").then((data)=>{
+      if(data){
+        next();
+      }
+    }).catch(()=>{
+      next('/login'); // Thay thế '/login' bằng đường dẫn tới trang đăng nhập của bạn
+
+    })
+
     // Nếu không có token, chuyển hướng về trang đăng nhập hoặc trang không được ủy quyền
-    next('/login'); // Thay thế '/login' bằng đường dẫn tới trang đăng nhập của bạn
   } else {
     // Nếu có token hoặc trang không yêu cầu xác thực, cho phép chuyển hướng
     next();

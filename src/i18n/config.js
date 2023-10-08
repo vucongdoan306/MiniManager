@@ -298,6 +298,10 @@ const i18n = createI18n({
       MonthByYear: "Statistics month by year",
       SelectChart: "Select chart",
       AppName: "miniapp",
+      EnterUsername: "Enter your username",
+      EnterPassword: "Enter your password",
+      ForgotPassword: "Forgot Password?"
+
     },
     vi: {
       welcome: "Chào mừng trở lại",
@@ -591,6 +595,9 @@ const i18n = createI18n({
       MonthByYear: "Thống kê tháng theo năm",
       SelectChart: "Chọn biểu đồ",
       AppName: "miniapp",
+      EnterUsername: "Nhập tên đăng nhập",
+      EnterPassword: "Nhập mật khẩu",
+      ForgotPassword: "Quên Mật Khẩu?"
     },
   },
 })

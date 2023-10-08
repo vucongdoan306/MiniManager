@@ -10,6 +10,10 @@ const form = ref({
   remember: false,
 })
 
+const rules = ref({
+  required: value => !!value || proxy.$t('Fieldcannotbeleftblank')
+})
+
 const isPasswordVisible = ref(false)
 
 async function login(){
@@ -18,6 +22,10 @@ async function login(){
     proxy.$router.push("/")
   });
 
+}
+
+const validateLogin = () =>{
+  
 }
 </script>
 
@@ -44,24 +52,25 @@ async function login(){
 
       <VCardText class="pt-2">
         <h5 class="text-h5 mb-1">
-          Welcome to {{ $t('AppName') }}! 👋🏻
+          {{ $t('welcome') }} {{ $t('AppName') }}! 👋🏻
         </h5>
         <p class="mb-0">
-          Hãy đăng nhập tài khoản của bạn và sử dụng chương trình
+          {{ $t('signinsub') }}
         </p>
       </VCardText>
 
       <VCardText>
-        <VForm @submit.prevent="login">
+        <VForm @submit.prevent.self="login">
           <VRow>
             <!-- email -->
             <VCol cols="12">
               <VTextField
                 v-model="form.username"
+                :rules="[rules.required]"
                 autofocus
-                placeholder="johndoe@email.com"
-                label="Email"
-                type="email"
+                :placeholder="$t('EnterUsername')"
+                :label="$t('username')"
+                type="text"
               />
             </VCol>
 
@@ -69,8 +78,9 @@ async function login(){
             <VCol cols="12">
               <VTextField
                 v-model="form.password"
-                label="Password"
-                placeholder="············"
+                :rules="[rules.required]"
+                :label="$t('Password')"
+                :placeholder="$t('EnterPassword')"
                 :type="isPasswordVisible ? 'text' : 'password'"
                 :append-inner-icon="isPasswordVisible ? 'bx-hide' : 'bx-show'"
                 @click:append-inner="isPasswordVisible = !isPasswordVisible"
@@ -80,14 +90,14 @@ async function login(){
               <div class="d-flex align-center justify-space-between flex-wrap mt-1 mb-4">
                 <VCheckbox
                   v-model="form.remember"
-                  label="Remember me"
+                  :label="$t('rememberme')"
                 />
 
                 <RouterLink
                   class="text-primary ms-2 mb-1"
                   to="javascript:void(0)"
                 >
-                  Forgot Password?
+                  {{ $t('ForgotPassword') }}
                 </RouterLink>
               </div>
 
@@ -96,7 +106,7 @@ async function login(){
                 block
                 type="submit"
                 :loading="loading"
-                @click="load"
+                @click="login"
               >
                 Login
               </VBtn>
@@ -112,7 +122,7 @@ async function login(){
                 class="text-primary ms-2"
                 to="/register"
               >
-                Create an account
+                {{ $t('createnewaccount') }}
               </RouterLink>
             </VCol>
 

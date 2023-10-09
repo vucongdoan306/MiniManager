@@ -300,7 +300,11 @@ const i18n = createI18n({
       AppName: "miniapp",
       EnterUsername: "Enter your username",
       EnterPassword: "Enter your password",
-      ForgotPassword: "Forgot Password?"
+      ForgotPassword: "Forgot Password?",
+      Adventurestartshere: "Adventure starts here",
+      LetsRegister: "Let's Register!",
+      Login: "Login",
+      or: "or"
 
     },
     vi: {
@@ -597,7 +601,11 @@ const i18n = createI18n({
       AppName: "miniapp",
       EnterUsername: "Nhập tên đăng nhập",
       EnterPassword: "Nhập mật khẩu",
-      ForgotPassword: "Quên Mật Khẩu?"
+      ForgotPassword: "Quên Mật Khẩu?",
+      Adventurestartshere: "Cuộc phiêu lưu bắt đầu từ đây",
+      LetsRegister: "Đăng ký ngay thôi!",
+      Login: "Đăng nhập",
+      or: "hoặc"
     },
   },
 })

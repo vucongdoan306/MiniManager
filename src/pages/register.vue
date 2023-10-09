@@ -1,12 +1,16 @@
 <script setup>
-import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
-import logo from '@images/logo.svg?raw'
+import AuthProvider from '@/views/pages/authentication/AuthProvider.vue';
+import logo from '@images/logo.svg?raw';
 
 const form = ref({
   username: '',
   email: '',
   password: '',
   privacyPolicies: false,
+})
+
+const rules = ref({
+  required: value => !!value || proxy.$t('Fieldcannotbeleftblank')
 })
 
 const isPasswordVisible = ref(false)
@@ -35,10 +39,10 @@ const isPasswordVisible = ref(false)
 
       <VCardText class="pt-2">
         <h5 class="text-h5 mb-1">
-          Adventure starts here 🚀
+          {{ $t('Adventurestartshere') }}🚀
         </h5>
         <p class="mb-0">
-          Make your app management easy and fun!
+          {{ $t('LetsRegister') }}
         </p>
       </VCardText>
 
@@ -49,9 +53,11 @@ const isPasswordVisible = ref(false)
             <VCol cols="12">
               <VTextField
                 v-model="form.username"
+                :rules="[rules.required]"
                 autofocus
-                label="Username"
-                placeholder="Johndoe"
+                :placeholder="$t('EnterUsername')"
+                :label="$t('username')"
+                type="text"
               />
             </VCol>
             <!-- email -->
@@ -68,8 +74,9 @@ const isPasswordVisible = ref(false)
             <VCol cols="12">
               <VTextField
                 v-model="form.password"
-                label="Password"
-                placeholder="············"
+                :rules="[rules.required]"
+                :label="$t('Password')"
+                :placeholder="$t('EnterPassword')"
                 :type="isPasswordVisible ? 'text' : 'password'"
                 :append-inner-icon="isPasswordVisible ? 'bx-hide' : 'bx-show'"
                 @click:append-inner="isPasswordVisible = !isPasswordVisible"
@@ -96,7 +103,7 @@ const isPasswordVisible = ref(false)
                 block
                 type="submit"
               >
-                Sign up
+                {{ $t('signup') }}
               </VBtn>
             </VCol>
 
@@ -105,12 +112,12 @@ const isPasswordVisible = ref(false)
               cols="12"
               class="text-center text-base"
             >
-              <span>Already have an account?</span>
+              <span>{{ $t('haveaccount') }}</span>
               <RouterLink
                 class="text-primary ms-2"
                 to="/login"
               >
-                Sign in instead
+                {{ $t('signin') }}
               </RouterLink>
             </VCol>
 
@@ -119,7 +126,7 @@ const isPasswordVisible = ref(false)
               class="d-flex align-center"
             >
               <VDivider />
-              <span class="mx-4">or</span>
+              <span class="mx-4">{{ $t('or') }}</span>
               <VDivider />
             </VCol>
 

@@ -14,19 +14,25 @@ const rules = ref({
   required: value => !!value || proxy.$t('Fieldcannotbeleftblank')
 })
 
-const isPasswordVisible = ref(false)
+const isPasswordVisible = ref(false);
+const isLoading = ref(false);
 
 async function login(){
+  isLoading.value = true;
   await proxy.$api.post("/Auth/LoginApp",{userName: form.value.username,password: form.value.password}).then(data=>{
     localStorage.setItem("authToken",data)
     proxy.$router.push("/")
+    isLoading.value = false;
+  }).catch(()=>{
+    // event.preventDefault();
+    isLoading.value = false;
   });
 
 }
 
 const validateLogin = () =>{
-  
 }
+
 </script>
 
 <template>
@@ -60,7 +66,7 @@ const validateLogin = () =>{
       </VCardText>
 
       <VCardText>
-        <VForm @submit.prevent.self="login">
+        <VForm @submit.prevent="login">
           <VRow>
             <!-- email -->
             <VCol cols="12">
@@ -104,11 +110,11 @@ const validateLogin = () =>{
               <!-- login button -->
               <VBtn
                 block
-                type="submit"
-                :loading="loading"
-                @click="login"
+                type="button"
+                :loading="isLoading"
+                @click="login()"
               >
-                Login
+                {{ $t('Login') }}
               </VBtn>
             </VCol>
 
@@ -131,7 +137,7 @@ const validateLogin = () =>{
               class="d-flex align-center"
             >
               <VDivider />
-              <span class="mx-4">or</span>
+              <span class="mx-4">{{ $t('or') }}</span>
               <VDivider />
             </VCol>
 

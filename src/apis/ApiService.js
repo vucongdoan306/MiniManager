@@ -1,10 +1,9 @@
-import router from '@/router/index.js'
 import axios from 'axios'
 
 // Tạo một instance của axios với các default config
 const instance = axios.create({
-  // baseURL: "https://localhost:7032/api",
-  baseURL: "https://localhost:44323/api",
+  baseURL: "https://localhost:7032/api",
+  // baseURL: "https://localhost:44323/api",
   // baseURL: "http://35.234.5.238:8889/api",
   
   headers: {
@@ -34,7 +33,7 @@ instance.interceptors.response.use(
       // Nếu token hết hạn hoặc không hợp lệ, thực hiện đăng xuất
     //   await store.dispatch('logout')
       // Chuyển hướng về trang đăng nhập
-      router.push('/register')
+      router.push('/login')
     }
     return Promise.reject(error)
   }

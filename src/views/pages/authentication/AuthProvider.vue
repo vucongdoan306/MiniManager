@@ -1,5 +1,8 @@
 <script setup>
-import { useTheme } from 'vuetify'
+import { getCurrentInstance } from 'vue';
+import { useTheme } from 'vuetify';
+
+const {proxy} = getCurrentInstance();
 
 const { global } = useTheme()
 
@@ -23,8 +26,15 @@ const authProviders = [
     icon: 'bxl-google',
     color: '#db4437',
     colorInDark: '#db4437',
+    linkLogin: "/Auth/login-google"
   },
 ]
+
+function loginWith(type){
+  proxy.$api.post(type).then((data)=>{
+    
+  })
+}
 </script>
 
 <template>
@@ -34,5 +44,6 @@ const authProviders = [
     :icon="link.icon"
     variant="text"
     :color="global.name.value === 'dark' ? link.colorInDark : link.color"
+    @click = "loginWith(link.linkLogin)"
   />
 </template>

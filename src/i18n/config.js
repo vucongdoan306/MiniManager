@@ -314,6 +314,11 @@ const i18n = createI18n({
       Login: "Login",
       or: "or",
       LoginFailed: "Login Failed!",
+      FirstName: "First name",
+      LastName: "Last name",
+      Enter: "Enter",
+      EnterFirstName: "Enter your first name",
+      EnterLastName: "Enter your last name",
     },
     vi: {
       welcome: "Chào mừng trở lại",
@@ -621,6 +626,11 @@ const i18n = createI18n({
       Login: "Đăng nhập",
       or: "hoặc",
       LoginFailed: "Đăng nhập thất bại!",
+      FirstName: "Tên",
+      LastName: "Họ",
+      Enter: "Nhập",
+      EnterFirstName: "Nhập tên",
+      EnterLastName: "Nhập họ",
     },
   },
 });

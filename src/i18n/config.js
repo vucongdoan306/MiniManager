@@ -1,4 +1,4 @@
-import { createI18n } from "vue-i18n"
+import { createI18n } from "vue-i18n";
 
 const i18n = createI18n({
   locale: "vi", // Ngôn ngữ mặc định
@@ -161,7 +161,7 @@ const i18n = createI18n({
       Chooseacustomer: "Choose a customer",
       Deleteaccount: "Delete account",
       Reject: "Reject",
-      All: 'All',
+      All: "All",
       NowShowing: "Now showing",
       ComingSoon: "Coming soon",
       Exchangeprice: "Exchange price",
@@ -176,15 +176,16 @@ const i18n = createI18n({
       Incognito: "Incognito",
       Date: "Date",
       Setting: "Setting",
-      RunningTime: 'Running Time',
+      RunningTime: "Running Time",
       AccountType: "Account type",
       Fullname: "Fullname",
-      AccountSettingNote: "If you want to change your account information. Please contact the administrator.",
+      AccountSettingNote:
+        "If you want to change your account information. Please contact the administrator.",
       AccountInformation: "Account Information",
       Manager: "Manager",
       Admin: "Admin",
       Employee: "Employee",
-      EmptyL: '<<Empty>>',
+      EmptyL: "<<Empty>>",
       TicketSettingNote: "Default fare information",
       NormalTicket: "Normal ticket",
       VIPTicket: "VIP ticket",
@@ -195,11 +196,13 @@ const i18n = createI18n({
       Enteryournewpassword: "Enter your new password",
       Reenterthepassword: "Re enter the password",
       EnterPassword: "Enter password",
-      PasswordSettingNote: "Please enter current password before changing new password",
+      PasswordSettingNote:
+        "Please enter current password before changing new password",
       Passwordenteredisincorrect: "Password entered is incorrect!",
       Pleaseenteranewpassword: "Please enter a new password!",
       Newpassworddoesnotmatch: "New password does not match!",
-      PasswordNotTrue: "Password must be 8 letters and contain at least one number and one special character",
+      PasswordNotTrue:
+        "Password must be 8 letters and contain at least one number and one special character",
       HaveErrorTryAgain: "An error occurred. Please try again!",
       Passwordupdatesuccessful: "Password update successful!",
       Generalsettings: "General settings",
@@ -220,7 +223,8 @@ const i18n = createI18n({
       Addingaccountfailed: "Adding account failed!",
       DeleteAccountContent: "Do you want to delete the selected account!",
       Incorrectaccountorpassword: "Incorrect account or password!",
-      ApproveAccountContent: "Account has been queued! Contact admin for approval",
+      ApproveAccountContent:
+        "Account has been queued! Contact admin for approval",
       Registrationfailed: "Registration failed!",
       Accountalreadyexists: "Account already exists",
       Accountapproved: "Account approved!",
@@ -243,9 +247,10 @@ const i18n = createI18n({
       BlankTypeMovie: "Movie type cannot be left blank",
       BlankMovieName: "Movie name cannot be left blank",
       BlankPoster: "Poster cannot be left blank",
-      Roomnamealreadyexists: 'Room name already exists',
+      Roomnamealreadyexists: "Room name already exists",
       Cinema: "Cinema",
-      CinemaSettingContent: "Create a new cinema, data such as fare information and catalog data will be carried away, other data will not be retained",
+      CinemaSettingContent:
+        "Create a new cinema, data such as fare information and catalog data will be carried away, other data will not be retained",
       DataName: "Data name",
       CinemaName: "Cinema name",
       WarningBlankCinemaName: "Cinema name cannot be blank!",
@@ -254,7 +259,8 @@ const i18n = createI18n({
       Addnewmovietype: "Add new movie type",
       Addnewcategorymovie: "Add new category movie",
       AddSeat: "Add seat",
-      BlankShowtimeContent: "There are no time slots available at the selected time",
+      BlankShowtimeContent:
+        "There are no time slots available at the selected time",
       Selectashowtime: "Select a showtime",
       Buyticket: "Buy ticket",
       SeatSold: "Seat sold",
@@ -269,8 +275,10 @@ const i18n = createI18n({
       Hotline: "Hotline",
       MST: "Tax code",
       AboutCinema: "About",
-      CinemaInfoSettingContent: "Cinema information, change some cinema information fields",
-      Warningchangeinfocinema: "Are you sure you want to change the information?",
+      CinemaInfoSettingContent:
+        "Cinema information, change some cinema information fields",
+      Warningchangeinfocinema:
+        "Are you sure you want to change the information?",
       Yes: "Yes",
       Cancle: "Cancle",
       enterenoughinfo: "You need to enter enough information",
@@ -304,8 +312,8 @@ const i18n = createI18n({
       Adventurestartshere: "Adventure starts here",
       LetsRegister: "Let's Register!",
       Login: "Login",
-      or: "or"
-
+      or: "or",
+      LoginFailed: "Login Failed!",
     },
     vi: {
       welcome: "Chào mừng trở lại",
@@ -463,7 +471,7 @@ const i18n = createI18n({
       Chooseacustomer: "Chọn khách hàng",
       Deleteaccount: "Xóa tài khoản",
       Reject: "Từ chối",
-      All: 'Tất cả',
+      All: "Tất cả",
       NowShowing: "Đang chiếu",
       ComingSoon: "Sắp chiếu",
       Exchangeprice: "Đổi giá",
@@ -481,7 +489,8 @@ const i18n = createI18n({
       RunningTime: "Thời lượng",
       AccountType: "Loại tài khoản",
       Fullname: "Họ và tên",
-      AccountSettingNote: "Nếu muốn thay đổi thông tin tài khoản. Vui lòng liên hệ quản trị viên.",
+      AccountSettingNote:
+        "Nếu muốn thay đổi thông tin tài khoản. Vui lòng liên hệ quản trị viên.",
       AccountInformation: "Thông tin tài khoản",
       Manager: "Quản lý",
       Admin: "Quản trị viên",
@@ -497,11 +506,13 @@ const i18n = createI18n({
       Enteryournewpassword: "Nhập mật khẩu mới",
       Reenterthepassword: "Nhập lại mật khẩu",
       EnterPassword: "Nhập mật khẩu",
-      PasswordSettingNote: "Vui lòng nhập mật khẩu hiện tại trước khi thay đổi mật khẩu mới",
+      PasswordSettingNote:
+        "Vui lòng nhập mật khẩu hiện tại trước khi thay đổi mật khẩu mới",
       Passwordenteredisincorrect: "Mật khẩu nhập không đúng!",
       Pleaseenteranewpassword: "Vui lòng nhập mật khẩu mới!",
       Newpassworddoesnotmatch: "Mật khẩu mới không trùng khớp!",
-      PasswordNotTrue: "Mật khẩu phải đủ 8 chữ cái chứa ít nhất một số và 1 ký tự đặc biệt",
+      PasswordNotTrue:
+        "Mật khẩu phải đủ 8 chữ cái chứa ít nhất một số và 1 ký tự đặc biệt",
       HaveErrorTryAgain: "Có lỗi xảy ra. Vui lòng thử lại",
       Passwordupdatesuccessful: "Cập nhật mật khẩu thành công!",
       Generalsettings: "Cài đặt chung",
@@ -521,7 +532,8 @@ const i18n = createI18n({
       Addingaccountfailed: "Thêm tài khoản thất bại!",
       DeleteAccountContent: "Bạn có muốn xóa tài khoản vừa chọn không!",
       Incorrectaccountorpassword: "Tài khoản hoặc mật khẩu không đúng!",
-      ApproveAccountContent: "Tài khoản đã được đưa vào hàng chờ! Liên hệ quản trị viên để được phê duyệt",
+      ApproveAccountContent:
+        "Tài khoản đã được đưa vào hàng chờ! Liên hệ quản trị viên để được phê duyệt",
       Registrationfailed: "Đăng ký thất bại!",
       Accountalreadyexists: "Tài khoản đã tồn tại",
       Accountapproved: "Tài khoản đã được phê duyệt!",
@@ -546,7 +558,8 @@ const i18n = createI18n({
       BlankPoster: "Poster không thể để trống",
       Roomnamealreadyexists: "Tên phòng đã tồn tại",
       Cinema: "Rạp phim",
-      CinemaSettingContent: "Tạo một rạp chiếu phim mới, các dữ liệu như thông tin giá vé và dữ liệu danh mục sẽ được mang đi, các dữ liệu khác sẽ không được giữ lại",
+      CinemaSettingContent:
+        "Tạo một rạp chiếu phim mới, các dữ liệu như thông tin giá vé và dữ liệu danh mục sẽ được mang đi, các dữ liệu khác sẽ không được giữ lại",
       DataName: "Tên dữ liệu",
       CinemaName: "Tên rạp phim",
       WarningBlankCinemaName: "Tên rạp phim không được để trống!",
@@ -570,7 +583,8 @@ const i18n = createI18n({
       Hotline: "Hotline",
       MST: "Mã số thuế",
       AboutCinema: "Giới thiệu",
-      CinemaInfoSettingContent: "Thông tin rạp chiếu phim, thay đổi một số trường thông tin của rạp chiếu phim",
+      CinemaInfoSettingContent:
+        "Thông tin rạp chiếu phim, thay đổi một số trường thông tin của rạp chiếu phim",
       Warningchangeinfocinema: "Bạn có chắc muốn thay đổi thông tin?",
       Yes: "Đồng ý",
       Cancle: "Hủy",
@@ -605,9 +619,10 @@ const i18n = createI18n({
       Adventurestartshere: "Cuộc phiêu lưu bắt đầu từ đây",
       LetsRegister: "Đăng ký ngay thôi!",
       Login: "Đăng nhập",
-      or: "hoặc"
+      or: "hoặc",
+      LoginFailed: "Đăng nhập thất bại!",
     },
   },
-})
+});
 
-export default i18n
+export default i18n;

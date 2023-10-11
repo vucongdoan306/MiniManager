@@ -1,6 +1,8 @@
 <script setup>
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue';
 import logo from '@images/logo.svg?raw';
+import { getCurrentInstance, ref } from 'vue';
+const {proxy} = getCurrentInstance();
 
 const form = ref({
   username: '',

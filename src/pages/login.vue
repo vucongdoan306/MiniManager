@@ -29,12 +29,13 @@ async function login() {
     .then((data) => {
       localStorage.setItem("authToken", data);
       proxy.$router.push("/");
-      isLoading.value = false;
     })
-    .catch(() => {
+    .catch((err) => {
       // event.preventDefault();
       isLoading.value = false;
-      snackState.openSnackBar(proxy.$t("LoginFailed"));
+      snackState.openSnackBar(
+        err.response?.data.message ?? proxy.$t("LoginFailed")
+      );
     });
 }
 
@@ -108,7 +109,7 @@ async function login() {
               </div>
 
               <!-- login button -->
-              <VBtn block type="submit" :loading="isLoading" @click="login()">
+              <VBtn block type="submit" :loading="isLoading">
                 {{ $t("Login") }}
               </VBtn>
             </VCol>

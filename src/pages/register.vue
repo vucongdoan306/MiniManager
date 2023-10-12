@@ -1,8 +1,12 @@
 <script setup>
+import { registerStore } from "@/stores/register-store";
+import { snackStore } from "@/stores/snack-store";
 import AuthProvider from "@/views/pages/authentication/AuthProvider.vue";
 import logo from "@images/logo.svg?raw";
 import { getCurrentInstance, ref } from "vue";
 const { proxy } = getCurrentInstance();
+const snackState = snackStore();
+const registerState = registerStore();
 
 const form = ref({
   username: "",
@@ -13,11 +17,60 @@ const form = ref({
   privacyPolicies: false,
 });
 
-const rules = ref({
-  required: (value) => !!value || "",
-});
+const isValidate = ref(false);
+
+function checkRequired(checkValue) {
+  if (!isValidate.value) {
+    return true;
+  }
+
+  if (!checkValue) {
+    return proxy.$t("Fieldcannotbeleftblank");
+  }
+}
+
+function checkSpecialChar(checkValue) {
+  if (!isValidate.value) {
+    return true;
+  }
+
+  if (registerState.containsSpecialCharacters(checkValue)) {
+    return proxy.$t("Thefieldcannotcontainspecialcharacters");
+  }
+}
 
 const isPasswordVisible = ref(false);
+
+async function registerAccount() {
+  if (
+    !(
+      form.value.email &&
+      form.value.firstname &&
+      form.value.lastname &&
+      form.value.password &&
+      form.value.username
+    )
+  ) {
+    snackState.openSnackBar(proxy.$t("Pleaseenterenoughinformation"));
+    isValidate.value = true;
+    return;
+  }
+
+  proxy.$api
+    .post("/Auth/RegisterUser", {
+      username: form.value.username,
+      firstName: form.value.firstname,
+      lastName: form.value.lastname,
+      password: form.value.password,
+      email: form.value.email,
+    })
+    .then(() => {
+      snackState.openSnackBar(proxy.$t("RegisterSuccessful"));
+    })
+    .catch(() => {
+      snackState.openSnackBar(proxy.$t("Registrationfailed"));
+    });
+}
 </script>
 
 <template>
@@ -41,24 +94,29 @@ const isPasswordVisible = ref(false);
       </VCardText>
 
       <VCardText>
-        <VForm @submit.prevent="$router.push('/')">
+        <VForm @submit.prevent="registerAccount()">
           <VRow>
             <VCol cols="6">
               <VTextField
                 v-model="form.lastname"
-                :rules="[rules.required]"
-                autofocus
+                :rules="[
+                  checkRequired(form.lastname),
+                  checkSpecialChar(form.lastname),
+                ]"
                 :placeholder="$t('EnterLastName')"
                 :label="$t('LastName')"
                 type="text"
+                autofocus
               />
             </VCol>
 
             <VCol cols="6">
               <VTextField
                 v-model="form.firstname"
-                :rules="[rules.required]"
-                autofocus
+                :rules="[
+                  checkRequired(form.firstname),
+                  checkSpecialChar(form.firstname),
+                ]"
                 :placeholder="$t('EnterFirstName')"
                 :label="$t('FirstName')"
                 type="text"
@@ -69,8 +127,10 @@ const isPasswordVisible = ref(false);
             <VCol cols="12">
               <VTextField
                 v-model="form.username"
-                :rules="[rules.required]"
-                autofocus
+                :rules="[
+                  checkRequired(form.username),
+                  checkSpecialChar(form.firstname),
+                ]"
                 :placeholder="$t('EnterUsername')"
                 :label="$t('username')"
                 type="text"
@@ -80,6 +140,7 @@ const isPasswordVisible = ref(false);
             <VCol cols="12">
               <VTextField
                 v-model="form.email"
+                :rules="[checkRequired(form.email)]"
                 label="Email"
                 placeholder="johndoe@email.com"
                 type="email"
@@ -90,7 +151,7 @@ const isPasswordVisible = ref(false);
             <VCol cols="12">
               <VTextField
                 v-model="form.password"
-                :rules="[rules.required]"
+                :rules="[checkRequired(form.password)]"
                 :label="$t('Password')"
                 :placeholder="$t('EnterPassword')"
                 :type="isPasswordVisible ? 'text' : 'password'"

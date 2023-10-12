@@ -319,6 +319,10 @@ const i18n = createI18n({
       Enter: "Enter",
       EnterFirstName: "Enter your first name",
       EnterLastName: "Enter your last name",
+      Pleaseenterenoughinformation: "Please enter enough information",
+      Thefieldcannotcontainspecialcharacters:
+        "The field cannot contain special characters",
+      RegisterSuccessful: "Register successful",
     },
     vi: {
       welcome: "Chào mừng trở lại",
@@ -631,6 +635,10 @@ const i18n = createI18n({
       Enter: "Nhập",
       EnterFirstName: "Nhập tên",
       EnterLastName: "Nhập họ",
+      Pleaseenterenoughinformation: "Hãy nhập đủ thông tin",
+      Thefieldcannotcontainspecialcharacters:
+        "Trường không được chứa kí tự đặc biệt",
+      RegisterSuccessful: "Đăng kí thành công!",
     },
   },
 });

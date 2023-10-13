@@ -165,14 +165,14 @@ async function registerAccount() {
                   inline
                 />
                 <VLabel for="privacy-policy" style="opacity: 1">
-                  <span class="me-1">I agree to</span>
-                  <a href="javascript:void(0)" class="text-primary"
-                    >privacy policy & terms</a
-                  >
+                  <span class="me-1">{{ $t("Iagreeto") }}</span>
+                  <a href="javascript:void(0)" class="text-primary">{{
+                    $t("privacypolicyandterms")
+                  }}</a>
                 </VLabel>
               </div>
 
-              <VBtn block type="submit">
+              <VBtn block type="submit" :disabled="!form.privacyPolicies">
                 {{ $t("signup") }}
               </VBtn>
             </VCol>

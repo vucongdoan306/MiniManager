@@ -323,6 +323,11 @@ const i18n = createI18n({
       Thefieldcannotcontainspecialcharacters:
         "The field cannot contain special characters",
       RegisterSuccessful: "Register successful",
+      PageNotFound: "Page Not Found",
+      PageNotFoundTitle: "We couldn't find the page you are looking for.",
+      BacktoHome: "Back to Home",
+      Iagreeto: "I agree to",
+      privacypolicyandterms: "privacy policy and terms",
     },
     vi: {
       welcome: "Chào mừng trở lại",
@@ -639,6 +644,11 @@ const i18n = createI18n({
       Thefieldcannotcontainspecialcharacters:
         "Trường không được chứa kí tự đặc biệt",
       RegisterSuccessful: "Đăng kí thành công!",
+      PageNotFound: "Không tìm thấy trang",
+      PageNotFoundTitle: "Chúng tôi không thể tìm thấy trang bạn đang tìm.",
+      BacktoHome: "Trở lại trang chính",
+      Iagreeto: "Tôi đồng ý",
+      privacypolicyandterms: "chính sách và điều khoản bảo mật",
     },
   },
 });

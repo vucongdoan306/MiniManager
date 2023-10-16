@@ -23,7 +23,7 @@ async function login() {
   isLoading.value = true;
   await proxy.$api
     .post("/Auth/LoginApp", {
-      userName: form.value.username,
+      username: form.value.username,
       password: form.value.password,
     })
     .then((data) => {
